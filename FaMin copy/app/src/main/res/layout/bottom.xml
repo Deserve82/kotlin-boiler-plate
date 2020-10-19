@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:weightSum="4"
+    android:layout_height="70dp">
+
+    <TextView
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:text="홈"
+        />
+
+    <TextView
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:text="찜한 강의"
+        />
+
+    <TextView
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:text="구매내역"
+        />
+
+    <TextView
+        android:id="@+id/my_page"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:text="내 리뷰"
+        />
+
+</LinearLayout>

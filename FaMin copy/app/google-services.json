@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "821119464606",
+    "firebase_url": "https://famin-7a69f.firebaseio.com",
+    "project_id": "famin-7a69f",
+    "storage_bucket": "famin-7a69f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821119464606:android:40949814cdcc82a429778f",
+        "android_client_info": {
+          "package_name": "com.example.famin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821119464606-cb93aaifp1ob8j1aj5s8rd7utandvjcf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.famin",
+            "certificate_hash": "ee8a56d719936cc013b3a1e728d0232cf2663de3"
+          }
+        },
+        {
+          "client_id": "821119464606-snti2f3b4gqi6betl6u5epmi4m10k2d5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGPAna_DA4qgYxTnVg1Yd3M0IdKzW376w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821119464606-snti2f3b4gqi6betl6u5epmi4m10k2d5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
