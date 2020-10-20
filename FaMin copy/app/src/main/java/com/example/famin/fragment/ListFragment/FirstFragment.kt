@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.famin.R
 import com.example.famin.fragment.MarketInfo.MarketInfoActivity
+import com.example.famin.utils.FirebaseUtils
 import kotlinx.android.synthetic.main.fragment_first.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -53,9 +54,44 @@ class FirstFragment : Fragment() {
         val list_adaptor = FirstFragAdapter(requireContext(), list_array)
         view.listview_first_fragment.adapter = list_adaptor
 
+        //data field가 있을 때
+
+
+        //data field가 없을 때
+        FirebaseUtils.db
+            .collection("zzim")
+            .document(FirebaseUtils.getUid())
+            .get()
+            .addOnSuccessListener { documentSnapshot ->
+
+                if (documentSnapshot.exists() == true){
+
+                } else {
+                    val lecture = hashMapOf(
+                        "Lang1" to "",
+                        "Lang2" to "",
+                        "Lang3" to "",
+                        "Lang4" to "",
+                        "Lang5" to "",
+                        "Lang6" to "",
+                        "Lang7" to "",
+                        "Lang8" to ""
+                        )
+                    FirebaseUtils.db
+                        .collection("zzim")
+                        .document(FirebaseUtils.getUid())
+                        .set(lecture)
+                        .addOnSuccessListener {  }
+                        .addOnFailureListener {  }
+                }
+            }
+            .addOnFailureListener{}
+
+
         view.listview_first_fragment.setOnItemClickListener {
             adapterView, view, i, l ->
             val intent = Intent(requireContext(), MarketInfoActivity::class.java)
+            intent.putExtra("title", list_array.get(i).title)
             startActivity(intent)
         }
 
