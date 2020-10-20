@@ -1,4 +1,4 @@
-package com.example.famin.fragment
+package com.example.famin.fragment.ListFragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -41,13 +41,13 @@ class FirstFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_first, container, false)
 
         val list_array = arrayListOf<ContentsListModel>(
-            ContentsListModel("a", "b", 1, "d"),
-            ContentsListModel("a", "b", 1, "d"),
-            ContentsListModel("a", "b", 1, "d"),
-            ContentsListModel("a", "b", 1, "d"),
-            ContentsListModel("a", "b", 1, "d"),
-            ContentsListModel("a", "b", 1, "d"),
-            ContentsListModel("a", "b", 1, "d")
+            ContentsListModel(R.drawable.chicken1, "one", 1, "d"),
+            ContentsListModel(R.drawable.chicken1, "two", 1, "d"),
+            ContentsListModel(R.drawable.chicken1, "three", 1, "d"),
+            ContentsListModel(R.drawable.chicken1, "four", 1, "d"),
+            ContentsListModel(R.drawable.chicken1, "five", 1, "d"),
+            ContentsListModel(R.drawable.chicken1, "six", 1, "d"),
+            ContentsListModel(R.drawable.chicken1, "seven", 1, "d")
             )
 
         val list_adaptor = FirstFragAdapter(requireContext(), list_array)

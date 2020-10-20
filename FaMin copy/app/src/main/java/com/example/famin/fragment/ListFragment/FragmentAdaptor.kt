@@ -1,4 +1,4 @@
-package com.example.famin.fragment
+package com.example.famin.fragment.ListFragment
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

@@ -1,4 +1,4 @@
-package com.example.famin.fragment
+package com.example.famin.fragment.MarketInfo
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.famin.R
-import com.example.famin.fragment.MarketInfo.ReviewListAdaptor
-import com.example.famin.fragment.MarketInfo.WriteActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_review.view.*

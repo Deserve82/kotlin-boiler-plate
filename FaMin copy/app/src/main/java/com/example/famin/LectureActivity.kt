@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import com.example.famin.fragment.FragmentAdaptor
+import com.example.famin.fragment.ListFragment.FragmentAdaptor
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_lecture.*
 import kotlinx.android.synthetic.main.custom_tab.view.*
