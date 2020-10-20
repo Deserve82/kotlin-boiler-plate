@@ -6,13 +6,14 @@ import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.example.famin.Auth.LoginActivity
 import com.example.famin.Auth.MyCommentActivity
+import com.example.famin.fragment.ListFragment.ContentsListModel
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom.*
 
 class MainActivity : AppCompatActivity() {
 
-    internal lateinit var viewpager : ViewPager
+    private lateinit var viewpager : ViewPager
 
 
     private lateinit var auth: FirebaseAuth
@@ -23,40 +24,15 @@ class MainActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        val img = arrayOf(
-            R.drawable.chicken1,
-            R.drawable.chicken2,
-            R.drawable.chicken1,
-            R.drawable.chicken2,
-            R.drawable.chicken1,
-            R.drawable.chicken2,
-            R.drawable.chicken1,
-            R.drawable.chicken1,
-            R.drawable.chicken1,
-            R.drawable.chicken1,
-            R.drawable.chicken1,
-            R.drawable.chicken1
+        val list_array = arrayListOf<ContentsListModel>(
+            ContentsListModel(R.drawable.chicken1, "후라이드 치킨", 17000, "빠삭한 후리이드 치킨!"),
+            ContentsListModel(R.drawable.chicken2, "간장 치킨", 18000, "간장에 맛있게 졸인 치킨!")
             )
-        val text = arrayOf(
-            "chicken1",
-            "chicken2",
-            "chicken1",
-            "chicken2",
-            "chicken1",
-            "chicken2",
-            "chicken1",
-            "chicken2",
-            "chicken1",
-            "chicken1",
-            "chicken1",
-            "chicken1",
-            "chicken1"
-        )
 
-        val gridviewAdapter = GridviewAdapter(this, img, text)
-        gridview.adapter =gridviewAdapter
+        val listviewAdater = ListviewAdapter(this, list_array)
+        listview.adapter =listviewAdater
 
-        gridview.setOnItemClickListener { adapterView, view, i, l ->
+        listview.setOnItemClickListener { adapterView, view, i, l ->
             val intent = Intent(this, LectureActivity::class.java)
             startActivity(intent)
         }

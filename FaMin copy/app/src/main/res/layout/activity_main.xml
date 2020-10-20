@@ -13,16 +13,15 @@
         android:layout_width="match_parent"
         android:layout_height="220dp"/>
 
-    <GridView
-        android:id="@+id/gridview"
+    <ListView
+        android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_marginTop="40dp"
-        android:numColumns="4"
         app:layout_constraintTop_toBottomOf="@+id/viewpager"
         android:layout_height="wrap_content"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        app:layout_constraintTop_toBottomOf="@+id/gridview"
+        app:layout_constraintTop_toBottomOf="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp">
