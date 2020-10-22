@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,21 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="220dp"/>
 
-    <GridView
-        android:id="@+id/gridview"
+    <ListView
+        android:id="@+id/listview"
+        android:layout_below="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_marginTop="40dp"
-        android:numColumns="4"
         app:layout_constraintTop_toBottomOf="@+id/viewpager"
         android:layout_height="wrap_content"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        app:layout_constraintTop_toBottomOf="@+id/gridview"
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp">
 
-        <include layout="@layout/bottom"></include>
+        <include
+            layout="@layout/bottom"></include>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

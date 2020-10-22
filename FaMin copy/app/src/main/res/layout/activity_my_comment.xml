@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_margin="10dp"
-        android:src="@drawable/chicken1"/>
+        android:src="@drawable/test_me"/>
 
     <TextView
         android:id="@+id/nickname_area"
