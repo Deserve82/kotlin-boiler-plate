@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -8,36 +10,97 @@
         android:src="@drawable/chicken1"
         android:layout_margin="20dp"
         android:layout_width="80dp"
-        android:layout_height="80dp"/>
+        android:layout_height="80dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/product_info"
+        app:layout_constraintLeft_toRightOf="@+id/lv_image_area"
+        android:layout_width="218dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/product_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:text="상품 이름"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:text="상품 이름"/>
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/product_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="가격"
-            />
+            android:text="가격" />
+
         <TextView
             android:id="@+id/product_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:text="설명"/>
-
+            android:text="설명"
+            android:textStyle="bold" />
     </LinearLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/quantity_info"
+        app:layout_constraintLeft_toRightOf="@id/product_info"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/decrease_btn"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="-"
+            android:textSize="10dp"
+            android:onClick="decrease"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/increase_btn"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:onClick="increase"
+            android:gravity="center"
+            android:text="+"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_cart_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/quantity_info"
+        app:layout_constraintLeft_toRightOf="@id/product_info"
+        android:text="장바구니"
+        />
+
+    <Button
+        android:id="@+id/buy_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/add_cart_btn"
+        app:layout_constraintLeft_toRightOf="@id/product_info"
+        android:text="구매하기"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

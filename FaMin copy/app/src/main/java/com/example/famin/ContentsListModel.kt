@@ -1,4 +1,4 @@
-package com.example.famin.fragment.ListFragment
+package com.example.famin
 
 data class ContentsListModel(
     var image: Int,
