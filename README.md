@@ -11,3 +11,6 @@ android app boiler plate with kotlin
 ### 마이페이지
 1. 기본적으로 내가 작성한 리뷰들을 볼 수 있음
 2. 닉네임 설정 가능
+
+
+아이패드로 배이직 앱 화면 만들기 
