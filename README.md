@@ -13,4 +13,5 @@ android app boiler plate with kotlin
 2. 닉네임 설정 가능
 
 
-아이패드로 배이직 앱 화면 만들기 
+아이패드로 배이직 앱 화면 만들기
+11월 14일까지 제작 
