@@ -20,8 +20,10 @@ private const val ARG_PARAM2 = "param2"
  */
 class ContentFragment : Fragment() {
 
-    val list1 = ArrayList<String>()
-    val list2 = ArrayList<String>()
+    private val menuImage = ArrayList<String>()
+    private val menuTitle = ArrayList<String>()
+    private val menuInfo = ArrayList<String>()
+    private val menuPrice = ArrayList<Int>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,15 +32,9 @@ class ContentFragment : Fragment() {
 
         val view : View = inflater.inflate(R.layout.fragment_content, container, false)
 
-        list1.add("a")
-        list1.add("a")
-        list1.add("a")
+        // 여기에다가 메뉴들 정보 불러오면 될듯 함
 
-        list2.add("b")
-        list2.add("b")
-        list2.add("b")
-
-        val list_adaptor = ListAdaptor(requireContext(), list1, list2)
+        val list_adaptor = ListAdaptor(requireContext(), menuImage, menuTitle, menuInfo, menuPrice)
         view.content_listview.adapter = list_adaptor
 
         return view

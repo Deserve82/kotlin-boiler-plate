@@ -7,9 +7,13 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.example.famin.R
 
-class ListAdaptor(val context : Context, val list_price : ArrayList<String>, val list_name : ArrayList<String>) : BaseAdapter(){
+class ListAdaptor(val context : Context,
+                  private val menuImage : ArrayList<String>,
+                  val menuTitle : ArrayList<String>,
+                  val menuInfo : ArrayList<String>,
+                  val menuPrice : ArrayList<Int>) : BaseAdapter(){
     override fun getCount(): Int {
-        return list_name.size
+        return menuImage.size
     }
 
 
@@ -22,7 +26,7 @@ class ListAdaptor(val context : Context, val list_price : ArrayList<String>, val
     }
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-        val view : View = LayoutInflater.from(context).inflate(R.layout.listview_item, null)
+        val view : View = LayoutInflater.from(context).inflate(R.layout.menu_item, null)
 
         return  view
     }
