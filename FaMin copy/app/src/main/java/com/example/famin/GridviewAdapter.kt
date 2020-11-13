@@ -24,7 +24,6 @@ class GridviewAdapter(val context: Context, val img_list: Array<Int>, val text_l
         val view : View = LayoutInflater.from(context).inflate(R.layout.greedview_item, null)
         view.gridview_text.text = text_list[p0]
         view.gridview_img.setImageResource(img_list[p0])
-
         return view
     }
 

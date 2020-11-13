@@ -39,6 +39,9 @@ class LectureActivity : AppCompatActivity() {
                 }
             }
         })
+        if (intent.hasExtra("tabId")) {
+            list_viewpager.currentItem = intent.getIntExtra("tabId", 0)
+        }
     }
 
     private fun createTabView(tabName: String) : View {
