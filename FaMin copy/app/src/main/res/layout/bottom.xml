@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:layout_width="0dp"
-        android:text="찜한 강의"
+        android:text="찜한 가게"
         />
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:layout_width="0dp"
-        android:text="구매내역"
+        android:text="내 리뷰들"
         />
 
     <TextView
@@ -34,7 +34,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:layout_width="0dp"
-        android:text="내 리뷰"
+        android:text="마이페이지"
         />
 
 </LinearLayout>

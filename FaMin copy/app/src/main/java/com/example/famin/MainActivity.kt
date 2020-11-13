@@ -24,37 +24,28 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         val img = arrayOf(
-            R.drawable.chicken1,
-            R.drawable.chicken2,
-            R.drawable.chicken1,
-            R.drawable.chicken2,
-            R.drawable.chicken1,
-            R.drawable.chicken2,
-            R.drawable.chicken1,
-            R.drawable.chicken1,
-            R.drawable.chicken1,
-            R.drawable.chicken1,
-            R.drawable.chicken1,
-            R.drawable.chicken1
+            R.drawable.chineunim,
+            R.drawable.donut,
+            R.drawable.icecream,
+            R.drawable.coffee,
+            R.drawable.hamburger,
+            R.drawable.pizza,
+            R.drawable.salad,
+            R.drawable.waffle
             )
         val text = arrayOf(
-            "chicken1",
-            "chicken2",
-            "chicken1",
-            "chicken2",
-            "chicken1",
-            "chicken2",
-            "chicken1",
-            "chicken2",
-            "chicken1",
-            "chicken1",
-            "chicken1",
-            "chicken1",
-            "chicken1"
+            "치킨",
+            "도넛",
+            "아이스크림",
+            "커피",
+            "햄버거",
+            "피자",
+            "샐러드",
+            "와플"
         )
 
         val gridviewAdapter = GridviewAdapter(this, img, text)
-        gridview.adapter =gridviewAdapter
+        gridview.adapter = gridviewAdapter
 
         gridview.setOnItemClickListener { adapterView, view, i, l ->
             val intent = Intent(this, LectureActivity::class.java)
@@ -67,7 +58,6 @@ class MainActivity : AppCompatActivity() {
         viewpager.adapter = adaptor
 
         my_page.setOnClickListener {
-
             if(auth.currentUser == null){
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)

@@ -17,8 +17,14 @@ class LectureActivity : AppCompatActivity() {
         val fragmentAdapter = FragmentAdaptor(supportFragmentManager)
         list_viewpager.adapter = fragmentAdapter
 
-        tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("chicken1")))
-        tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("chicken2")))
+        tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("치킨")))
+        tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("도넛")))
+        tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("아이스크림")))
+        tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("커피")))
+        tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("햄버거")))
+        tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("피자")))
+        tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("샐러드")))
+        tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("와플")))
 
         list_viewpager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
     }
