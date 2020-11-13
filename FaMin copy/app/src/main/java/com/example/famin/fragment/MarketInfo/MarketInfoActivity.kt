@@ -20,6 +20,7 @@ class MarketInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_market_info)
 
         lecture_text.text = intent.getStringExtra("title")
+        logo.setImageResource(intent.getIntExtra("logo", 0))
 
         zzim.setOnClickListener {
             FirebaseUtils.db

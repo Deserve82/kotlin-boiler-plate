@@ -19,14 +19,13 @@
         android:text="체인 이름"/>
 
     <ImageView
-        android:id="@+id/lecture_review_count"
+        android:id="@+id/logo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
         android:layout_marginTop="10dp"
-        android:textSize="20dp"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/lecture_text"
-        android:text="체인점 사진"/>
+        />
 
     <View
         android:id="@+id/header_bottom_line"
@@ -34,7 +33,7 @@
         android:background="@android:color/darker_gray"
         android:layout_height="1dp"
         android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/lecture_review_count"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"/>
 
@@ -97,9 +96,6 @@
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@+id/figure_2"
             android:text="체인점 리뷰"/>
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
