@@ -31,15 +31,17 @@ class MarketInfoActivity : AppCompatActivity() {
                 .addOnFailureListener { Toast.makeText(this, "실패", Toast.LENGTH_LONG).show() }
         }
 
+        // 기본 메뉴 눌러진 상태
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_area, ContentFragment())
             .commit()
+        figure_1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25F)
+
 
         figure_1.setOnClickListener {
             figure_1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25F)
             figure_2.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15F)
             figure_3.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15F)
-
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_area, ContentFragment())
                 .commit()
