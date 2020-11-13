@@ -18,10 +18,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FirstFragment.newInstance] factory method to
+ * Use the [FourthFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FirstFragment : Fragment() {
+class FourthFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -38,24 +38,16 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val view : View = inflater.inflate(R.layout.fragment_first, container, false)
 
         val list_array = arrayListOf<ContentsListModel>(
-            ContentsListModel(R.drawable.bbq, "bbq", 1, "d"),
-            ContentsListModel(R.drawable.bhc, "bhc", 1, "d"),
-            ContentsListModel(R.drawable.ddoreore, "또레오레", 1, "d"),
-            ContentsListModel(R.drawable.goopne, "굽네치킨", 1, "d"),
-            ContentsListModel(R.drawable.hosik, "호식이 두마리 치킨", 1, "d"),
-            ContentsListModel(R.drawable.kfc, "kfc", 1, "d")
-            )
+            ContentsListModel(R.drawable.starbucks, "스타벅스", 1, "d")
+        )
 
         val list_adaptor = FirstFragAdapter(requireContext(), list_array)
         view.listview_first_fragment.adapter = list_adaptor
 
         //data field가 있을 때
-
-
         //data field가 없을 때
         FirebaseUtils.db
             .collection("zzim")
@@ -75,7 +67,7 @@ class FirstFragment : Fragment() {
                         "Lang6" to "",
                         "Lang7" to "",
                         "Lang8" to ""
-                        )
+                    )
                     FirebaseUtils.db
                         .collection("zzim")
                         .document(FirebaseUtils.getUid())
@@ -88,7 +80,7 @@ class FirstFragment : Fragment() {
 
 
         view.listview_first_fragment.setOnItemClickListener {
-            adapterView, view, i, l ->
+                adapterView, view, i, l ->
             val intent = Intent(requireContext(), MarketInfoActivity::class.java)
             intent.putExtra("title", list_array.get(i).title)
             startActivity(intent)
@@ -104,12 +96,12 @@ class FirstFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FirstFragment.
+         * @return A new instance of fragment FourthFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FirstFragment().apply {
+            FourthFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

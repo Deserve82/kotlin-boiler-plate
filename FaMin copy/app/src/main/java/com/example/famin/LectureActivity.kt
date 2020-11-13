@@ -14,9 +14,6 @@ class LectureActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lecture)
 
-        val fragmentAdapter = FragmentAdaptor(supportFragmentManager)
-        list_viewpager.adapter = fragmentAdapter
-
         tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("치킨")))
         tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("도넛")))
         tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("아이스크림")))
@@ -26,7 +23,22 @@ class LectureActivity : AppCompatActivity() {
         tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("샐러드")))
         tab_layout.addTab(tab_layout.newTab().setCustomView(createTabView("와플")))
 
+        val fragmentAdapter = FragmentAdaptor(supportFragmentManager, tab_layout.tabCount)
+        list_viewpager.adapter = fragmentAdapter
+        // 슬라이드로 연결 하기
         list_viewpager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
+        // 클릭으로 연결 하기
+        tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabReselected(p0: TabLayout.Tab?) {
+            }
+            override fun onTabUnselected(p0: TabLayout.Tab?) {
+            }
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                if (tab != null) {
+                    list_viewpager.currentItem = tab.position
+                }
+            }
+        })
     }
 
     private fun createTabView(tabName: String) : View {

@@ -1,11 +1,15 @@
 package com.example.famin.fragment.ListFragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.famin.R
+import com.example.famin.fragment.MarketInfo.MarketInfoActivity
+import com.example.famin.utils.FirebaseUtils
+import kotlinx.android.synthetic.main.fragment_first.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,8 +38,56 @@ class SecondFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false)
+        val view : View = inflater.inflate(R.layout.fragment_first, container, false)
+
+        val list_array = arrayListOf<ContentsListModel>(
+            ContentsListModel(R.drawable.dd, "던킨도넛", 1, "d"),
+            ContentsListModel(R.drawable.parisbagget, "파리바게트", 1, "d"),
+            ContentsListModel(R.drawable.touslesjous, "뚜레쥬르", 1, "d")
+        )
+
+        val list_adaptor = FirstFragAdapter(requireContext(), list_array)
+        view.listview_first_fragment.adapter = list_adaptor
+
+        //data field가 있을 때
+        //data field가 없을 때
+        FirebaseUtils.db
+            .collection("zzim")
+            .document(FirebaseUtils.getUid())
+            .get()
+            .addOnSuccessListener { documentSnapshot ->
+
+                if (documentSnapshot.exists()){
+
+                } else {
+                    val lecture = hashMapOf(
+                        "Lang1" to "",
+                        "Lang2" to "",
+                        "Lang3" to "",
+                        "Lang4" to "",
+                        "Lang5" to "",
+                        "Lang6" to "",
+                        "Lang7" to "",
+                        "Lang8" to ""
+                    )
+                    FirebaseUtils.db
+                        .collection("zzim")
+                        .document(FirebaseUtils.getUid())
+                        .set(lecture)
+                        .addOnSuccessListener {  }
+                        .addOnFailureListener {  }
+                }
+            }
+            .addOnFailureListener{}
+
+
+        view.listview_first_fragment.setOnItemClickListener {
+                adapterView, view, i, l ->
+            val intent = Intent(requireContext(), MarketInfoActivity::class.java)
+            intent.putExtra("title", list_array.get(i).title)
+            startActivity(intent)
+        }
+        return view
     }
 
     companion object {
