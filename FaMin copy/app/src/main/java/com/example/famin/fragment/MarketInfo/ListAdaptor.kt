@@ -8,12 +8,10 @@ import android.widget.BaseAdapter
 import com.example.famin.R
 
 class ListAdaptor(val context : Context,
-                  private val menuImage : ArrayList<String>,
-                  val menuTitle : ArrayList<String>,
-                  val menuInfo : ArrayList<String>,
-                  val menuPrice : ArrayList<Int>) : BaseAdapter(){
+                  private val menus : ArrayList<MenuListModel>
+                  ) : BaseAdapter(){
     override fun getCount(): Int {
-        return menuImage.size
+        return menus.size
     }
 
 

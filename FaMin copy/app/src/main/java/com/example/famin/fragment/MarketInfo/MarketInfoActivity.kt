@@ -19,7 +19,9 @@ class MarketInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_market_info)
 
-        lecture_text.text = intent.getStringExtra("title")
+        val title = intent.getStringExtra("title")
+
+        lecture_text.text = title
         logo.setImageResource(intent.getIntExtra("logo", 0))
 
         zzim.setOnClickListener {
@@ -33,7 +35,7 @@ class MarketInfoActivity : AppCompatActivity() {
 
         // 기본 메뉴 눌러진 상태
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_area, ContentFragment())
+            .replace(R.id.fragment_area, ContentFragment(title))
             .commit()
         figure_1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25F)
 
@@ -43,7 +45,7 @@ class MarketInfoActivity : AppCompatActivity() {
             figure_2.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15F)
             figure_3.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15F)
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_area, ContentFragment())
+                .replace(R.id.fragment_area, ContentFragment(title))
                 .commit()
         }
         figure_2.setOnClickListener {

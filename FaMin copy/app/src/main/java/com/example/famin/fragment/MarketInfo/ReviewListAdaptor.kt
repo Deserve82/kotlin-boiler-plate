@@ -26,9 +26,9 @@ class ReviewListAdaptor(val context: Context,
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
         val view : View = LayoutInflater.from(context).inflate(R.layout.review_item, null)
-        view.review_nickname.text = list_nickname.get(p0)
-        view.review_content.text = list_text.get(p0)
-        view.review_rating.text = list_rating.get(p0)
+        view.review_nickname.text = list_nickname[p0]
+        view.review_content.text = list_text[p0]
+        view.review_rating.text = list_rating[p0]
 
         return view
     }

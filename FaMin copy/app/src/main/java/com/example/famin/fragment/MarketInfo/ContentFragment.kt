@@ -1,11 +1,16 @@
 package com.example.famin.fragment.MarketInfo
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.famin.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_content.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -18,12 +23,15 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ContentFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ContentFragment : Fragment() {
+class ContentFragment(title: String) : Fragment() {
 
-    private val menuImage = ArrayList<String>()
-    private val menuTitle = ArrayList<String>()
-    private val menuInfo = ArrayList<String>()
-    private val menuPrice = ArrayList<Int>()
+    private lateinit var auth : FirebaseAuth
+
+    private val db = FirebaseFirestore.getInstance()
+
+    private val menus = ArrayList<MenuListModel>()
+
+    private val t = title
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +42,25 @@ class ContentFragment : Fragment() {
 
         // 여기에다가 메뉴들 정보 불러오면 될듯 함
 
-        val list_adaptor = ListAdaptor(requireContext(), menuImage, menuTitle, menuInfo, menuPrice)
+        auth = FirebaseAuth.getInstance()
+
+        db.collection("menu")
+            .whereEqualTo("store", t)
+            .get()
+            .addOnSuccessListener { documents ->
+                print("여기까지 왔다.")
+                for (document in documents){
+                    document.data
+                }
+            }
+            .addOnFailureListener {exception ->
+                Log.w(TAG, "ERROR", exception)
+            }
+
+        print("실패")
+
+
+        val list_adaptor = ListAdaptor(requireContext(), menus)
         view.content_listview.adapter = list_adaptor
 
         return view
