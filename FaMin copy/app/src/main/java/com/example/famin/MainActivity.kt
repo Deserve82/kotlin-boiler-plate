@@ -52,7 +52,6 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("tabId", i)
             startActivity(intent)
         }
-
         viewpager = findViewById(R.id.viewpager) as ViewPager
 
         val adaptor = ViewPagerAdaptor(this)

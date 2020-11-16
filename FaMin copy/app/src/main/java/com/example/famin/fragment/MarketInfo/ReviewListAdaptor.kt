@@ -29,7 +29,6 @@ class ReviewListAdaptor(val context: Context,
         view.review_nickname.text = list_nickname[p0]
         view.review_content.text = list_text[p0]
         view.review_rating.text = list_rating[p0]
-
         return view
     }
 

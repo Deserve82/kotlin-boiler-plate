@@ -48,21 +48,21 @@ class ContentFragment(title: String) : Fragment() {
             .whereEqualTo("store", t)
             .get()
             .addOnSuccessListener { documents ->
-                print("여기까지 왔다.")
                 for (document in documents){
-                    document.data
+                    val menu = MenuListModel(
+                        document.data["image"] as String,
+                        document.data["name"] as String,
+                        document.data["price"] as Long,
+                        document.data["info"] as String
+                    )
+                    menus.add(menu)
                 }
+                val list_adaptor = ListAdaptor(requireContext(), menus)
+                view.content_listview.adapter = list_adaptor
             }
             .addOnFailureListener {exception ->
                 Log.w(TAG, "ERROR", exception)
             }
-
-        print("실패")
-
-
-        val list_adaptor = ListAdaptor(requireContext(), menus)
-        view.content_listview.adapter = list_adaptor
-
         return view
     }
 
