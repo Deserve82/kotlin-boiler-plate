@@ -12,9 +12,10 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_margin="10dp"
-        android:text="강의 소개" />
+        android:text="매장 소개" />
 
     <TextView
+        android:id="@+id/info_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"

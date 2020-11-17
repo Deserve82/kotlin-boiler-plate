@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/lv_textview_1"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -23,14 +23,14 @@
             android:textStyle="bold"
             android:text="제목 영역입니다."/>
         <TextView
-            android:id="@+id/lv_textview_2"
+            android:id="@+id/store_menu_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="최근 리뷰가 n개 입니다."
             />
         <TextView
-            android:id="@+id/lv_textview_3"
+            android:id="@+id/store_review_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

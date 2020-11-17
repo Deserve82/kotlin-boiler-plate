@@ -42,8 +42,8 @@ class FirstFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_first, container, false)
 
         val list_array = arrayListOf<ContentsListModel>(
-            ContentsListModel(R.drawable.bbq, "bbq", 1, "d"),
-            ContentsListModel(R.drawable.bhc, "bhc", 1, "d"),
+            ContentsListModel(R.drawable.bbq, "bbq", 1, "가장 유서 깊은 치킨집 bbq! 1990년부터 이어진 맛집 정신으로 여러분의 입맛을 즐겁게 해드립니다."),
+            ContentsListModel(R.drawable.bhc, "bhc", 1, "bhc! 아 그 이름만 들어도 설레는 이 기분, 과연 당신은 무엇을 그토록 원했을까요?"),
             ContentsListModel(R.drawable.ddoreore, "또레오레", 1, "d"),
             ContentsListModel(R.drawable.goopne, "굽네치킨", 1, "d"),
             ContentsListModel(R.drawable.hosik, "호식이 두마리 치킨", 1, "d"),
@@ -62,9 +62,7 @@ class FirstFragment : Fragment() {
             .document(FirebaseUtils.getUid())
             .get()
             .addOnSuccessListener { documentSnapshot ->
-
                 if (documentSnapshot.exists()){
-
                 } else {
                     val lecture = hashMapOf(
                         "Lang1" to "",
@@ -88,10 +86,11 @@ class FirstFragment : Fragment() {
 
 
         view.listview_first_fragment.setOnItemClickListener {
-            adapterView, view, i, l ->
+                _, _, i, _ ->
             val intent = Intent(requireContext(), MarketInfoActivity::class.java)
             intent.putExtra("title", list_array[i].title)
             intent.putExtra("logo", list_array[i].image)
+            intent.putExtra("info", list_array[i].info)
             startActivity(intent)
         }
 

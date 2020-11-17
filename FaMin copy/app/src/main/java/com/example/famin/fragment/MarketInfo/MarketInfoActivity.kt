@@ -20,6 +20,7 @@ class MarketInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_market_info)
 
         val title = intent.getStringExtra("title")
+        val info :String = intent.getStringExtra("info")
 
         lecture_text.text = title
         logo.setImageResource(intent.getIntExtra("logo", 0))
@@ -54,7 +55,7 @@ class MarketInfoActivity : AppCompatActivity() {
             figure_3.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15F)
 
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_area, InfoFragment())
+                .replace(R.id.fragment_area, InfoFragment(info))
                 .commit()
         }
         figure_3.setOnClickListener {
