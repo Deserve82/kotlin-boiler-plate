@@ -53,7 +53,8 @@ class ContentFragment(title: String) : Fragment() {
                         document.data["image"] as String,
                         document.data["name"] as String,
                         document.data["price"] as Long,
-                        document.data["info"] as String
+                        document.data["info"] as String,
+                        document.data["store"] as String
                     )
                     menus.add(menu)
                 }

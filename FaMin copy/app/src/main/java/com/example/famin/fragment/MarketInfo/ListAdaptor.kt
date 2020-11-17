@@ -34,6 +34,8 @@ class ListAdaptor(val context : Context,
         view.menu_title.text = menus[p0].name
         view.setOnClickListener {
             val intent = Intent(context, MenuReviewActivity::class.java)
+            intent.putExtra("store", menus[p0].store)
+            intent.putExtra("menu", menus[p0].name)
             context.startActivity(intent)
         }
         return  view

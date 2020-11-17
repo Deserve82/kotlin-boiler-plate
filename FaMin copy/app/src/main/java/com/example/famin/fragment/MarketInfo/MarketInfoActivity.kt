@@ -63,7 +63,7 @@ class MarketInfoActivity : AppCompatActivity() {
             figure_3.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25F)
 
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_area, ReviewFragment())
+                .replace(R.id.fragment_area, ReviewFragment(title))
                 .commit()
         }
 

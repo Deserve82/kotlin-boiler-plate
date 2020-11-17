@@ -17,6 +17,8 @@ class WriteActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
 
     private lateinit var nickname: String
+    private lateinit var userImage: String
+
 
     private val db = FirebaseFirestore.getInstance()
 
@@ -36,25 +38,50 @@ class WriteActivity : AppCompatActivity() {
 
         docRef.get().addOnSuccessListener { documentSnapshot ->
             nickname = documentSnapshot.get("nickname") as String
+            userImage = documentSnapshot.get("user_image") as String
         }
 
+        val store: String = intent.getStringExtra("store")
+        val menu: String = intent.getStringExtra("menu")
+
         writing_button.setOnClickListener {
+            if (menu == "none"){
             val form = hashMapOf(
                 "text" to text_input_area.text.toString(),
                 "writer" to nickname,
-                "rating" to rating_num
+                "rating" to rating_num,
+                "user_image" to userImage,
+                "store" to store
             )
-
             db.collection("reviews")
                 .add(form)
                 .addOnSuccessListener { Toast.makeText(this, "성공", Toast.LENGTH_LONG).show()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
-
                     finish()
-
                 }
-                .addOnFailureListener { Toast.makeText(this, "실패", Toast.LENGTH_LONG).show()}
+                .addOnFailureListener { Toast.makeText(this, "실패", Toast.LENGTH_LONG).show()
+                }
+            }
+            else {
+                val form = hashMapOf(
+                    "text" to text_input_area.text.toString(),
+                    "writer" to nickname,
+                    "rating" to rating_num,
+                    "user_image" to userImage,
+                    "store" to store,
+                    "menu" to menu
+                )
+                db.collection("menu_reviews")
+                    .add(form)
+                    .addOnSuccessListener { Toast.makeText(this, "성공", Toast.LENGTH_LONG).show()
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                    .addOnFailureListener { Toast.makeText(this, "실패", Toast.LENGTH_LONG).show()
+                    }
+            }
         }
     }
 }

@@ -6,11 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.example.famin.R
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.menu_item.view.*
 import kotlinx.android.synthetic.main.review_item.view.*
 
 class ReviewListAdaptor(val context: Context,
                         val list_nickname : ArrayList<String>,
-                        val list_text : ArrayList<String>, val list_rating : ArrayList<String>) : BaseAdapter()
+                        val list_text : ArrayList<String>, val list_rating : ArrayList<String>,
+                        val profileImageArray : ArrayList<String>
+                        ) : BaseAdapter()
 {
     override fun getCount(): Int {
         return list_nickname.size
@@ -29,6 +33,7 @@ class ReviewListAdaptor(val context: Context,
         view.review_nickname.text = list_nickname[p0]
         view.review_content.text = list_text[p0]
         view.review_rating.text = list_rating[p0]
+        Picasso.get().load(profileImageArray[p0]).into(view.profile_image)
         return view
     }
 

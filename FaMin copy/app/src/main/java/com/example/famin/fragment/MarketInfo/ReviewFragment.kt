@@ -24,7 +24,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ReviewFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ReviewFragment : Fragment() {
+class ReviewFragment(s: String) : Fragment() {
 
     private lateinit var auth : FirebaseAuth
 
@@ -33,25 +33,30 @@ class ReviewFragment : Fragment() {
     private val text_array = ArrayList<String>()
     private val nickname_array = ArrayList<String>()
     private val rating_array = ArrayList<String>()
+    private val profileImageArray = ArrayList<String>()
+
+    private var store: String = s
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view : View = inflater.inflate(R.layout.fragment_review, container, false)
-
         auth = FirebaseAuth.getInstance()
 
-        val review_adapter = ReviewListAdaptor(requireContext(), nickname_array, text_array, rating_array)
+        val review_adapter = ReviewListAdaptor(requireContext(),
+            nickname_array, text_array, rating_array, profileImageArray)
         view.listview_review.adapter = review_adapter
 
         db.collection("reviews")
+            .whereEqualTo("store", store)
             .get()
             .addOnSuccessListener { result ->
                 for (document in result){
                     rating_array.add(document.get("rating") as String)
                     text_array.add(document.get("text") as String)
                     nickname_array.add(document.get("writer") as String + "님의 리뷰")
+                    profileImageArray.add(document.get("user_image") as String)
                 }
                 review_adapter.notifyDataSetChanged()
             }
@@ -64,6 +69,8 @@ class ReviewFragment : Fragment() {
                 Toast.makeText(requireContext(), "가입 또는 로그인을 해주세요", Toast.LENGTH_LONG).show()
             } else {
                 val intent = Intent(requireContext(), WriteActivity::class.java)
+                intent.putExtra("store", store)
+                intent.putExtra("menu", "none")
                 startActivity(intent)
             }
         }
