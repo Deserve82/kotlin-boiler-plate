@@ -1,7 +1,9 @@
 package com.example.famin.fragment.MarketInfo
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -49,11 +51,14 @@ class ReviewFragment : Fragment() {
                 for (document in result){
                     rating_array.add(document.get("rating") as String)
                     text_array.add(document.get("text") as String)
-                    nickname_array.add(document.get("writer") as String)
+                    nickname_array.add(document.get("writer") as String + "님의 리뷰")
                 }
                 review_adapter.notifyDataSetChanged()
             }
-            .addOnFailureListener { exception ->  }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, exception)
+            }
+
         view.write_button.setOnClickListener{
             if (auth.currentUser == null){
                 Toast.makeText(requireContext(), "가입 또는 로그인을 해주세요", Toast.LENGTH_LONG).show()

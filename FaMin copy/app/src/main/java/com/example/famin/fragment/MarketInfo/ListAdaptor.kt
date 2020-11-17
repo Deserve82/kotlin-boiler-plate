@@ -1,6 +1,7 @@
 package com.example.famin.fragment.MarketInfo
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +33,8 @@ class ListAdaptor(val context : Context,
         view.menu_info.text = menus[p0].info
         view.menu_title.text = menus[p0].name
         view.setOnClickListener {
-
+            val intent = Intent(context, MenuReviewActivity::class.java)
+            context.startActivity(intent)
         }
         return  view
     }

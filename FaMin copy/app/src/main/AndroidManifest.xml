@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragment.MarketInfo.WriteActivity"></activity>
+        <activity android:name=".fragment.MarketInfo.MenuReviewActivity"></activity>
+        <activity android:name=".fragment.MarketInfo.WriteActivity" />
         <activity android:name=".Auth.JoinInfoActivity" />
         <activity android:name=".Auth.MyCommentActivity" />
         <activity android:name=".Auth.JoinActivity" />
