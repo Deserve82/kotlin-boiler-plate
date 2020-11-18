@@ -5,9 +5,10 @@ import android.os.Bundle
 import com.example.famin.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_my_comment.*
 
-class MyCommentActivity : AppCompatActivity() {
+class MyInfoActivity : AppCompatActivity() {
 
     private val db = FirebaseFirestore.getInstance()
 
@@ -21,7 +22,8 @@ class MyCommentActivity : AppCompatActivity() {
         val docRef = db.collection("users")
             .document(auth.currentUser?.uid.toString())
         docRef.get().addOnSuccessListener { documentSnapshot ->
-            nickname_area.setText(documentSnapshot.get("nickname").toString())
+            nickname_area.text = documentSnapshot.get("nickname").toString()
+            Picasso.get().load(documentSnapshot.get("user_image").toString()).into(profile_img)
         }
     }
 }

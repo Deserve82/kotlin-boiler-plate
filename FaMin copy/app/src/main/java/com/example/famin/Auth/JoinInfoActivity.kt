@@ -24,7 +24,9 @@ class JoinInfoActivity : AppCompatActivity() {
 
         join_info_login_button.setOnClickListener {
             val user = hashMapOf(
-                "nickname" to join_info_email_area.text.toString()
+                "nickname" to join_info_email_area.text.toString(),
+                // 기본 이미지 설정
+                "user_image" to "https://firebasestorage.googleapis.com/v0/b/famin-7a69f.appspot.com/o/test.png?alt=media&token=676f20e9-4d06-4717-9141-92fb2b302423"
             )
 
             db.collection("users").document(auth.currentUser?.uid.toString())

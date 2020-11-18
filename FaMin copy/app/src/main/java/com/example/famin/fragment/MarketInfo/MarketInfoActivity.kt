@@ -25,15 +25,6 @@ class MarketInfoActivity : AppCompatActivity() {
         lecture_text.text = title
         logo.setImageResource(intent.getIntExtra("logo", 0))
 
-        zzim.setOnClickListener {
-            FirebaseUtils.db
-                .collection("zzim")
-                .document(FirebaseUtils.getUid())
-                .update(intent.getStringExtra("title"), true)
-                .addOnSuccessListener { Toast.makeText(this, "성공", Toast.LENGTH_LONG).show() }
-                .addOnFailureListener { Toast.makeText(this, "실패", Toast.LENGTH_LONG).show() }
-        }
-
         // 기본 메뉴 눌러진 상태
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_area, ContentFragment(title))

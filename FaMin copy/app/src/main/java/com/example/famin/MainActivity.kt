@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.example.famin.Auth.LoginActivity
-import com.example.famin.Auth.MyCommentActivity
+import com.example.famin.Auth.MyInfoActivity
+import com.example.famin.Auth.MyReviewActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom.*
@@ -57,13 +58,23 @@ class MainActivity : AppCompatActivity() {
         val adaptor = ViewPagerAdaptor(this)
         viewpager.adapter = adaptor
 
+        my_reviews.setOnClickListener {
+            if (auth.currentUser == null){
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            } else {
+                val intent = Intent(this, MyReviewActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
         my_page.setOnClickListener {
             if(auth.currentUser == null){
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
             else{
-                val intent = Intent(this, MyCommentActivity::class.java)
+                val intent = Intent(this, MyInfoActivity::class.java)
                 startActivity(intent)
             }
         }

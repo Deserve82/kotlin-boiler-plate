@@ -53,38 +53,6 @@ class FirstFragment : Fragment() {
         val list_adaptor = FirstFragAdapter(requireContext(), list_array)
         view.listview_first_fragment.adapter = list_adaptor
 
-        //data field가 있을 때
-
-
-        //data field가 없을 때
-        FirebaseUtils.db
-            .collection("zzim")
-            .document(FirebaseUtils.getUid())
-            .get()
-            .addOnSuccessListener { documentSnapshot ->
-                if (documentSnapshot.exists()){
-                } else {
-                    val lecture = hashMapOf(
-                        "Lang1" to "",
-                        "Lang2" to "",
-                        "Lang3" to "",
-                        "Lang4" to "",
-                        "Lang5" to "",
-                        "Lang6" to "",
-                        "Lang7" to "",
-                        "Lang8" to ""
-                        )
-                    FirebaseUtils.db
-                        .collection("zzim")
-                        .document(FirebaseUtils.getUid())
-                        .set(lecture)
-                        .addOnSuccessListener {  }
-                        .addOnFailureListener {  }
-                }
-            }
-            .addOnFailureListener{}
-
-
         view.listview_first_fragment.setOnItemClickListener {
                 _, _, i, _ ->
             val intent = Intent(requireContext(), MarketInfoActivity::class.java)
