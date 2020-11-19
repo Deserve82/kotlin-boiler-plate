@@ -38,7 +38,7 @@ class ContentFragment(title: String) : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view : View = inflater.inflate(R.layout.fragment_content, container, false)
+        var view : View = inflater.inflate(R.layout.fragment_content, container, false)
 
         // 여기에다가 메뉴들 정보 불러오면 될듯 함
 
