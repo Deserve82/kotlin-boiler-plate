@@ -8,6 +8,11 @@ import android.view.ViewGroup
 import com.example.famin.R
 import kotlinx.android.synthetic.main.fragment_info.view.*
 
+/*
+가게의 정보를 MarketInfo 액티비티에 붙여주는 프래그먼트입니다.
+*/
+
+
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"

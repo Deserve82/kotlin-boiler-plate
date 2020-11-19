@@ -7,6 +7,12 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.greedview_item.view.*
 
+/*
+그리드뷰 어댑
+각각의 그리드 뷰아이템들을 모아서 엮어주는 페이지 입니다.
+*/
+
+
 class GridviewAdapter(val context: Context, val img_list: Array<Int>, val text_list: Array<String>): BaseAdapter(){
     override fun getCount(): Int {
         return img_list.size

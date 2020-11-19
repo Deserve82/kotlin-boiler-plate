@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.famin.R
 import com.example.famin.fragment.MarketInfo.MarketInfoActivity
-import com.example.famin.utils.FirebaseUtils
 import kotlinx.android.synthetic.main.fragment_first.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -44,7 +43,7 @@ class ThirdFragment : Fragment() {
             ContentsListModel(R.drawable.beskinrobins, "베스킨라빈스31", 1, "d")
         )
 
-        val list_adaptor = FirstFragAdapter(requireContext(), list_array)
+        val list_adaptor = StoreListAdapter(requireContext(), list_array)
         view.listview_first_fragment.adapter = list_adaptor
 
         view.listview_first_fragment.setOnItemClickListener {

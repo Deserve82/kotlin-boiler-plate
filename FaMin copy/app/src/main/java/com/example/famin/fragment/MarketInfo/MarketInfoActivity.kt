@@ -10,6 +10,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_market_info.*
 
+/*
+가게를 눌렀을 때에 관련된 정보를 가져오는 액티비티 입니다.
+누른 것에 따라 글자크리를 달리하여 어떤 것이 선택되었는지 가시적으로 보이게 했습니다.
+*/
+
 class MarketInfoActivity : AppCompatActivity() {
 
     private var auth = FirebaseAuth.getInstance()

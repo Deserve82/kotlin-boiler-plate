@@ -10,6 +10,11 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.menu_item.view.*
 import kotlinx.android.synthetic.main.review_item.view.*
 
+/*
+뷰페이저 페이지
+이미지 리스트에서 홈에서 프로모션 관련 페이지를 보여준다.
+*/
+
 class ReviewListAdaptor(val context: Context,
                         val list_nickname : ArrayList<String>,
                         val list_text : ArrayList<String>, val list_rating : ArrayList<String>,

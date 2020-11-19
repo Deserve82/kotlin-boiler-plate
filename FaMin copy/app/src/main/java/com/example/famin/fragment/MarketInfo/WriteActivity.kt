@@ -10,6 +10,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_write.*
 
+/*
+리뷰를 작성하는 페이지
+리뷰를 작성하는 페이지 입니다.
+별점은 String 값으로 들어가게 됩니다.
+*/
+
 class WriteActivity : AppCompatActivity() {
 
     private lateinit var rating_num : String
@@ -29,7 +35,7 @@ class WriteActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         // rating
-        rating_area.setOnRatingBarChangeListener { ratingBar, fl, b ->
+        rating_area.setOnRatingBarChangeListener { _, fl, _ ->
             rating_num = fl.toString()
         }
 
@@ -46,6 +52,7 @@ class WriteActivity : AppCompatActivity() {
 
         writing_button.setOnClickListener {
             if (menu == "none"){
+                // 메뉴가 아닌 가게의 리뷰를 남길때입니다. 코드 재사용을 위해 한 곳에서 리뷰 저장을 처리하게 만들었습니다.
             val form = hashMapOf(
                 "text" to text_input_area.text.toString(),
                 "writer" to nickname,
@@ -64,6 +71,7 @@ class WriteActivity : AppCompatActivity() {
                 }
             }
             else {
+                // 메뉴에 관련된 리뷰를 남길때 입니다.
                 val form = hashMapOf(
                     "text" to text_input_area.text.toString(),
                     "writer" to nickname,

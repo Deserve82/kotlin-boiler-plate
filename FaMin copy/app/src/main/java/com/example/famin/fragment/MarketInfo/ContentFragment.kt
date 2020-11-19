@@ -23,6 +23,13 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ContentFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+
+/*
+메뉴들 정보를 MarketInfo 액티비티에 붙여주는 프래그먼트입니다.
+*/
+
+
 class ContentFragment(title: String) : Fragment() {
 
     private lateinit var auth : FirebaseAuth
@@ -40,7 +47,7 @@ class ContentFragment(title: String) : Fragment() {
 
         var view : View = inflater.inflate(R.layout.fragment_content, container, false)
 
-        // 여기에다가 메뉴들 정보 불러오면 될듯 함
+        // 여기에다가 메뉴들 정보 불러옵니다.
 
         auth = FirebaseAuth.getInstance()
 

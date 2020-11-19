@@ -8,6 +8,10 @@ import com.example.famin.fragment.ListFragment.FragmentAdaptor
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_lecture.*
 import kotlinx.android.synthetic.main.custom_tab.view.*
+/*
+그리드 뷰와 탭을 묶어 리스트 페이지를 이동시키는 렉쳐 액티비티
+슬라이드로 이동하거나 탭을 클릭하면 이동하게 만들어주는 액티비티 입니다.
+*/
 
 class LectureActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -7,6 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
+/*
+뷰페이저 페이지
+이미지 리스트에서 홈에서 프로모션 관련 페이지를 보여준다.
+*/
+
 
 class ViewPagerAdaptor(private val context : Context) : PagerAdapter(){
 

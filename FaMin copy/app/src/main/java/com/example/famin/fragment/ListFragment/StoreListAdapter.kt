@@ -12,7 +12,11 @@ import com.example.famin.R
 import com.example.famin.utils.FirebaseUtils
 import kotlinx.android.synthetic.main.listview_item.view.*
 
-class FirstFragAdapter(val context : Context, val list : ArrayList<ContentsListModel>) : BaseAdapter() {
+/*
+가게 리스트를 뿌려주는 어댑터 - 가게 리스트 뷰를 holder에 담아 뿌려주는 역할을 합니다.
+*/
+
+class StoreListAdapter(val context : Context, val list : ArrayList<ContentsListModel>) : BaseAdapter() {
     override fun getCount(): Int {
         return list.size
     }
