@@ -5,9 +5,11 @@ android app with kotlin
 먹어본 놈이 안다... 리뷰를 통해 어떤 메뉴가 괜찮은지 알 수 있는 어플
 
 ## 버전 및 실행 환경
-안드로이드 ver Q 이상 권장
-Kotlin ver 1.4.10
-Kotlin Compiler 1.4
+ android Q 이상 권장
+ 
+ Kotlin ver 1.4.10
+ 
+ Kotlin Compiler 1.4
 
 ## 중요 기능
  - 회원가입, 로그인 기능
