@@ -10,6 +10,13 @@ import com.example.famin.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.menu_item.view.*
 
+
+/*
+메뉴들에 관련된 정보를 붙여주는 어댑터 입니다.
+클릭을 통해 메뉴 리뷰들을 반환하는 MenuReviewActivity를 실행합니다.
+*/
+
+
 class ListAdaptor(val context : Context,
                   private val menus : ArrayList<MenuListModel>
                   ) : BaseAdapter(){

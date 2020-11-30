@@ -1,3 +1,4 @@
+
 package com.example.famin
 
 import android.content.Intent
@@ -10,6 +11,13 @@ import com.example.famin.Auth.MyReviewActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom.*
+
+/*
+메인을 담당하고 있는 액티비티,
+그리드 뷰, 뷰페이져 생성 (프로모션 관련 페이지)
+하단바 -  마이페이지, 마이 리뷰 리스트 이동 가능
+*/
+
 
 class MainActivity : AppCompatActivity() {
 

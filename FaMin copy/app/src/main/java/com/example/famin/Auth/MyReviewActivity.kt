@@ -13,6 +13,12 @@ import kotlinx.android.synthetic.main.activity_lecture.*
 import kotlinx.android.synthetic.main.activity_my_comment.*
 import kotlinx.android.synthetic.main.activity_my_review.*
 
+/*
+내 리뷰를 보여주는 페이지 액티비티 입니다.
+리뷰 리스트 어댑터를 재사용 했습니다.
+*/
+
+
 class MyReviewActivity : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth

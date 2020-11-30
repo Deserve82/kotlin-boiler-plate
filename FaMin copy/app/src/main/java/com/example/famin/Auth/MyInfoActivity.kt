@@ -8,6 +8,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_my_comment.*
 
+/*
+내 정보를 보여주는 액티비티 입니다.
+*/
+
+
 class MyInfoActivity : AppCompatActivity() {
 
     private val db = FirebaseFirestore.getInstance()

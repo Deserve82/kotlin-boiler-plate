@@ -9,6 +9,11 @@ import com.example.famin.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
+/*
+로그인을 진행하는 액티비티입니다.
+*/
+
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth

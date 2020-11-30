@@ -10,6 +10,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_join_info.*
 
+/*
+정보를 기입하는 액티비티 입니다. 닉네임만 넣을 수 있고 이미지는 아직 기본이미지만 삽입이 가능합니다.
+*/
+
 class JoinInfoActivity : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth

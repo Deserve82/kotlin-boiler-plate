@@ -8,6 +8,11 @@ import com.example.famin.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_join.*
 
+/*
+회원가입을 진행하는 액티비티입니다. 이메일과 비밀번호만 입력하게 됩니다.
+*/
+
+
 class JoinActivity : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth
